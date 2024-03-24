@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./main.css">
+    <title>Maquette violette page accueil</title>
+</head>
+
+<body>
+    <!-- component -->
+
+    <nav class="relative px-4 py-4 flex justify-between items-center bg-white shadow">
+		<a class="text-3xl font-bold leading-none" href="#">
+			<div class="">
+
+                <img src="/assets/images/Exo.svg" alt="">
+            </div>
+		</a>
+		<div class="lg:hidden">
+			<button class="navbar-burger flex items-center text-purple-600 p-3">
+				<svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					
+					<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+				</svg>
+			</button>
+		</div>
+		<ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Home</a></li>
+			<li class="text-gray-300">
+				
+			</li>
+			<li><a class="text-sm text-purple-600 font-bold" href="#">About Us</a></li>
+			<li class="text-gray-300">
+				
+			</li>
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Our features</a></li>
+			<li class="text-gray-300">
+				
+			</li>
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Pricing</a></li>
+			<li class="text-gray-300">
+				
+			</li>
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Contact</a></li>
+		</ul>
+		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-purple-500 font-bold text-white rounded-xl transition duration-200" href="#">Sign In</a>
+		<a class="hidden lg:inline-block py-2 px-6 bg-white-500 hover:bg-purple-600 border-b-2 border-purple-500 text-sm text-purple-500 font-bold  transition duration-200" href="#">Login</a>
+	</nav>
+	<div class="navbar-menu relative z-50 hidden">
+		<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+		<nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+			<div class="flex items-center mb-8">
+				<a class="mr-auto text-3xl font-bold leading-none" href="#">
+					<div class="">
+
+                        <img src="/assets/images/Exo.svg" alt="">
+                    </div>
+				</a>
+				<button class="navbar-close">
+					<svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+			<div>
+				<ul>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-purple-50 hover:text-purple-600 rounded" href="#">Home</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-purple-50 hover:text-purple-600 rounded" href="#">About Us</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-purple-50 hover:text-purple-600 rounded" href="#">Services</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-purple-50 hover:text-purple-600 rounded" href="#">Pricing</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-purple-50 hover:text-purple-600 rounded" href="#">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mt-auto">
+				<div class="pt-6">
+					<a class="block mb-3 leading-loose text-xs text-center bg-purple-500 text-white font-bold py-2 px-4 rounded" href="#">Sign in</a>
+					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-purple-600 hover:bg-purple-700  rounded-xl" href="#">Sign In</a>
+				</div>
+				<p class="my-4 text-xs text-center text-gray-400">
+					<span>Copyright © 2021</span>
+				</p>
+			</div>
+		</nav>
+	</div>
+
+
+<script>
+// Burger menus
+document.addEventListener('DOMContentLoaded', function() {
+    // open
+    const burger = document.querySelectorAll('.navbar-burger');
+    const menu = document.querySelectorAll('.navbar-menu');
+
+    if (burger.length && menu.length) {
+        for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
+                }
+            });
+        }
+    }
+
+    // close
+    const close = document.querySelectorAll('.navbar-close');
+    const backdrop = document.querySelectorAll('.navbar-backdrop');
+
+    if (close.length) {
+        for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
+                }
+            });
+        }
+    }
+
+    if (backdrop.length) {
+        for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
+                }
+            });
+        }
+    }
+});
+</script>
+
+    <main>
+        <section class="flex container mx-auto my-20 w-8/12 ">
+            <div class="w-max">
+                <h1 class="text-6xl text-zinc-900 font-bold font-['Roboto']">
+                    Your digital transformation
+                    begins here
+                </h1>
+                <p>A new adventure for perfect design. Discover our design system based on 8px grid and scaling
+                    components.</p>
+                <button class="  bg-purple-500 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded">Explore
+                    features</button>
+                <button
+                    class="bg-white hover:bg-purple-500 hover:text-white text-purple-600 font-bold py-2 px-4 border rounded border-purple-600">
+                    Get Started
+                </button>
+            </div>
+            <div class="w-full hidden md:block">
+                <img class="hidden lg:block" src="/assets/images/Illustration.svg" alt="">
+            </div>
+        </section>
+        <section
+            class=" flex container-fluid w-screen h-auto px-20 py-20 my-32 bg-purple-300 flex-col justify-center items-center inline-flex text-white">
+            <div class="">
+                <h2 class=" text-5xl font-semibold mb-16">SaaS solutions that drive results</h2>
+                <p class="text-2xl font-bold text-center">Explore our suite of powerful components solutions.</p>
+
+            </div>
+            <div class="container flex md:flex-row sm:flex-col px-20">
+                <div class="">
+                    <h3>Entreprise planning</h3>
+                    <p>Seamlessly manage and integrate all core business functions to optimize efficiency and
+                        productivity.</p>
+                </div>
+                <div class=""">
+                    <h3>Project management</h3>
+                    <p>Ensure project success by efficiently planning, executing, and tracking your initiatives with our
+                        project management software.</p>
+                </div>
+                <div class="">
+                    <h3>Analytics and reporting</h3>
+                    <p>Leverage data-driven insights to make informed decisions and stay ahead of the competition.</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class=" flex items-center container mx-auto my-20 w-8/12 ">
+
+                <div class=" w-full">
+                    <h2 class=" mb-10 self-stretch text-zinc-900 text-5xl font-semibold">Customization and integration
+                    </h2>
+                    <p class=" mb-10 grow shrink basis-0 text-zinc-900 text-base font-medium">Our SaaS solutions are
+                        flexible and can be tailored to your specific business requirements. We understand that each
+                        organization is unique, and we are committed to delivering software that fits your needs like a
+                        glove.</p>
+                    <button class="  bg-purple-500 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded">Learn
+                        more</button>
+
+                </div>
+                <div class="w-full"><img src="./assets/images/Illustration exo.svg" alt=""></div>
+            </div>
+
+        </section>
+
+        <section>
+            <h2 class="mb-10 self-stretch text-zinc-900 text-5xl font-semibold text-center">Discover what sets us apart
+            </h2>
+            <p class="text-center">Our suite of SaaS solutions is packed with powerful features.</p>
+
+            <div class="flex container mx-auto my-20 w-full">
+                <div class="w-1/3 px-4">
+                    <div class="">
+                        <h3 class="text-2xl font-bold text-center my-8">Seamless integration</h3>
+                        <p>Integrate App seamlessly with your existing systems and processes, ensuring a smooth
+                            transition to our software.</p>
+                        <h3 class="text-2xl font-bold text-center my-8">Mobile accessibility</h3>
+                        <p>Access your data and tools from anywhere with mobile compatibility, keeping your team
+                            connected on the go.</p>
+                        <h3 class="text-2xl font-bold text-center my-8">Robust security</h3>
+                        <p>Your data is our top priority. Benefit from state-of-the-art security measures to keep your
+                            information safe.</p>
+                    </div>
+
+                </div>
+                <div class="w-1/3 px-4">
+                    <div class="">
+                        <h3 class="text-2xl font-bold text-center my-8">Seamless integration</h3>
+                        <p>Integrate App seamlessly with your existing systems and processes, ensuring a smooth
+                            transition to our software.</p>
+                        <h3 class="text-2xl font-bold text-center my-8">Mobile accessibility</h3>
+                        <p>Access your data and tools from anywhere with mobile compatibility, keeping your team
+                            connected on the go.</p>
+                        <h3 class="text-2xl font-bold text-center my-8">Robust security</h3>
+                        <p>Your data is our top priority. Benefit from state-of-the-art security measures to keep your
+                            information safe.</p>
+                    </div>
+
+                </div>
+                <div class="w-1/3 px-4">
+                    <h3 class="text-2xl font-bold text-center my-8">Seamless integration</h3>
+                    <p>Integrate App seamlessly with your existing systems and processes, ensuring a smooth
+                        transition to our software.</p>
+                    <h3 class="text-2xl font-bold text-center my-8">Mobile accessibility</h3>
+                    <p>Access your data and tools from anywhere with mobile compatibility, keeping your team
+                        connected on the go.</p>
+                    <h3 class="text-2xl font-bold text-center my-8">Robust security</h3>
+                    <p>Your data is our top priority. Benefit from state-of-the-art security measures to keep your
+                        information safe.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="container-fluid flex bg-slate-950 text-white d-flex py-8 px-10">
+
+        <div class="w-1/4 mx-8">
+
+            <img src="/assets/images/Exo.svg" alt="">
+        </div>
+        <div class="w-1/4 mx-8 ">
+            <h2 class="text-lg">My Company</h2>
+            <div class="pt-6 flex flex-col">
+
+                <a class="mt-2" href="">Privacy</a>
+                <a class="mt-2" href="">Terms</a>
+                <a class="mt-2" href="">Sitemap</a>
+                <a class="mt-2" href="">Cookies</a>
+            </div>
+        </div>
+        <div class="w-1/4 mx-8">
+            <h2 class="text-lg">Support</h2>
+            <div class="pt-6 flex flex-col">
+
+                <a class="mt-2" href="">Cancellation options</a>
+                <a class="mt-2" href="">Refunds</a>
+                <a class="mt-2" href="">Help centre</a>
+                <a class="mt-2" href="">Contact us</a>
+            </div>
+        </div>
+        <div class="w-1/4 mx-8">
+            <h2 class="text-lg">social</h2>
+            <div class="pt-6 flex">
+
+                <a class="mt-2 mx-2" href="">Facebook</a>
+                <a class="mt-2 mx-2" href="">Twitter</a>
+                <a class="mt-2 mx-2" href="">Linkedin</a>
+                <a class="mt-2 mx-2" href="">Google +</a>
+
+            </div>
+
+        </div>
+
+
+    </footer>
+
+</body>
+
+</html>
